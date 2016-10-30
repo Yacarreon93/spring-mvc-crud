@@ -24,7 +24,7 @@
 				<th>First Name</th>
 				<th>Last Name</th>
 				<th>Email</th>
-			</tr>			
+			</tr>
 			<!-- loop over customers list -->
 			<c:forEach var="customer" items="${customers}">
 				<tr>
