@@ -45,4 +45,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 	}
 
+	@Override
+	public Customer getCustomer(int customerId) {
+		
+		// get the current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();				
+		
+		// get the customer using the id
+		Customer customer = currentSession.get(Customer.class, customerId);
+		
+		return customer;
+		
+	}
+
 }
