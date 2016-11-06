@@ -28,15 +28,26 @@
 			</tr>
 			<!-- loop over customers list -->
 			<c:forEach var="customer" items="${customers}">
+			
 				<!-- construct an "update" link with customer id -->
 				<c:url var="updateLink" value="/customer/showFormForUpdate">
 					<c:param name="customerId" value="${customer.id}"></c:param>
 				</c:url>
+				
+				<!-- construct a "delete" link with customer id -->
+				<c:url var="deleteLink" value="/customer/showFormForDelete">
+					<c:param name="customerId" value="${customer.id}"></c:param>
+				</c:url>
+				
 				<tr>
 					<td>${customer.firstName}</td>
 					<td>${customer.lastName}</td>
 					<td>${customer.email}</td>
-					<td><a href="${updateLink}">Update</a></td>
+					<td>
+						<a href="${updateLink}">Update</a>
+						|
+						<a href="${updateLink}">Delete</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>
